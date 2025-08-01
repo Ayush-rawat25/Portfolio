@@ -1,38 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#particle {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Home{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
+  padding: 0 5%;
+  gap: 2rem;
+}
+
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  flex: 1;
+  gap: 2rem;
+}
+
+.block {
+  background-color: #171717;
   color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  font-size: 1.5rem;
+  font-family: "Bitcount Prop Single", system-ui;
+  animation: float 3s ease-in-out infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-block {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 20%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile-block img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #171717;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.homeimage{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeimage img{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cta{
+  position: fixed;
+  bottom: 20px;      
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.btn-primary {
+  background: #00f2fe;
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+}
+
+.btn-primary:hover { transform: scale(1.05); }
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #00f2fe;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-secondary:hover { background: rgba(0, 242, 254, 0.1); }
+
+.socials {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 1000;
+}
+
+.socials a {
+  color: white;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+  color: #00f2fe;
+  transform: scale(1.2);
+}
+
+#skills-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding-left: 80px; /* adjust based on social bar width */
+  padding-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .Home {
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 60px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .homeimage {
+    display: none;
   }
+
+  .profile-block {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile-block p{
+    display: none;
+  }
+
+  .block {
+    max-width: 90%;
+    text-align: center;
+  }
+  .cta{
+    display: none;
+  }
+  .socials {
+    position: fixed;
+    top: 10px;      
+    left: 50%;
+    bottom: auto;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+  }
+  #skills-section {
+    padding-left: 25px;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
