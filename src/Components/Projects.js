@@ -89,7 +89,7 @@ const Projects = () => {
                   <a href="https://github.com/Ayush-rawat25/Saferoute" target="_blank" rel="noopener noreferrer">
                     <FaGithub size={24} /> GitHub
                   </a>
-                  <a href="https://scheduler-deployed-link.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://saferoute-5dmy.onrender.com/" target="_blank" rel="noopener noreferrer">
                     🌐 Live App
                   </a>
                 </div>
